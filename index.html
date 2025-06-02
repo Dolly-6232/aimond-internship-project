@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Generator</title>
+    <link rel="stylesheet" href="style.css"/>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>QR Code Generator</h1>
+
+        <form id="qrForm">
+            <label for="inputType">Choose Type:</label>
+            <select id="inputType">
+                <option value="text">Text</option>
+                <option value="url">URL</option>
+                <option value="email">Email</option>
+                <option value="wifi">WIFI credentials</option>
+                <option value="contact">Contact Detail</option>
+            </select>
+
+            <label for="inputData">Enter Data:</label>
+            <textarea type="text" id="inputData" placeholder="Enter Data.." required></textarea>
+
+            <label for="inputColor">color:</label>
+            <input type="color" id="inputColor" value="#000000"/>
+
+            <label for="inputSize">Size (px):</label>
+            <input type="number" id="inputSize" placeholder="Enter Size in Pixel.." value="200"/>
+
+            <label for="inputBgColor">Background-Color:</label>
+            <input type="color" id="inputBgColor" value="#ffffff"/>
+
+            <label for="inputLogo">Upload Logo:</label>
+            <input type="file" id="inputLogo" accept="image/* "/>
+
+        </form>
+
+     <button type="button" id="generateBtn">Generate QR</button>
+
+     <div class="previewContainer">
+        <h2>Preview:</h2>
+
+        <canvas id="qrCanvas"></canvas>
+     </div>
+
+     <button  type="button" id="downloadbtn">Download PNG</button>
+
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
